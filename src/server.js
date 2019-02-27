@@ -1,5 +1,5 @@
 const { createServer, get } = require('http')
-const { payment } = require('./payment')
+const { payment } = require('./bambora')
 const port = 5000
 const read = (file)=>{
     var fs = require('fs')
@@ -15,11 +15,25 @@ const readraw = (file)=>{
 
     return data
 }
+const extractBody = (request, callback) => {
+    var body = ''
+    request.on('data', (chunk) => {
+        body += chunk;
+    })
+    request.on('end', () => {
+        callback(JSON.parse(body))
+    })
+}
 const server = {
     start: function(done) {
         this.internal = createServer((request, response)=>{
             if (request.url == '/payment/card') {
-                payment(request, response)
+                extractBody(request, (body)=>{
+                    payment(body.token, (message)=>{
+                        response.write(message)
+                        response.end();
+                    })
+                })
             }
             else {
                 if (request.url.indexOf('/static/scripts') == 0) {
