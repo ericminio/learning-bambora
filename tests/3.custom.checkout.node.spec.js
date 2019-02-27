@@ -10,7 +10,7 @@ describe('naive implementation', function() {
         expect(process.env.API_PASSCODE).not.to.equal(undefined)
     })
 
-    it('works', (done)=> {
+    it('works with 2 calls', (done)=> {
         tokenization({
             cvd: 123,
             expiry_month: 10,
