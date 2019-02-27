@@ -1,0 +1,21 @@
+{
+  "name": "efiling-payment",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha tests/*.spec.js --recursively --timeout 0 --exit"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.0.2",
+    "selenium-webdriver": "^4.0.0-alpha.1"
+  },
+  "dependencies": {
+    "base-64": "^0.1.0",
+    "request": "^2.88.0",
+    "utf8": "^3.0.0"
+  }
+}
