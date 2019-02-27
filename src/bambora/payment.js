@@ -20,7 +20,7 @@ var payment = (token, callback)=>{
         })
     }
     request.post(payment, function(err, resp, body) {
-        callback(JSON.parse(body))
+        callback(body)
     })
 }
 

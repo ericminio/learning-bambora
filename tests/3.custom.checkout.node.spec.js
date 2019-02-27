@@ -18,7 +18,7 @@ describe('naive implementation', function() {
             number: 4030000010001234
         }, (token)=>{
             payment(token, (received)=>{
-                expect(received.message).to.equal('Approved')
+                expect(JSON.parse(received).message).to.equal('Approved')
                 done()
             })
         })
