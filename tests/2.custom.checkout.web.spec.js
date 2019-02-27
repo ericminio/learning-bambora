@@ -20,6 +20,7 @@ describe('web interface', function() {
         await driver.get('http://localhost:5000')
         let panel = await driver.findElement(By.css('#panel-card div form div label'))
         await panel.click()
+        await driver.sleep(1000)
 
         let cardFrame = await driver.findElement(By.name('bambora-card-number-iframe'))
         await driver.switchTo().frame(cardFrame)
