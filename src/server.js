@@ -8,7 +8,7 @@ const server = {
         this.internal = createServer((request, response)=>{
             if (request.url == '/') {
                 response.setHeader('content-type', 'text/html')
-                response.write(file('checkout.html', __dirname))
+                response.write(file('/static/html/checkout.html', __dirname))
                 response.end();
             }
             if (request.url.indexOf('/static/') == 0) {
