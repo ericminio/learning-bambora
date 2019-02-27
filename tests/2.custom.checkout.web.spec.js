@@ -2,7 +2,7 @@ const { Builder, By, until } = require('selenium-webdriver');
 const { expect } = require('chai');
 require('../src/server')
 
-describe('Payment', function() {
+describe('web interface', function() {
 
     var server
     var driver
